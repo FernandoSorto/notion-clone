@@ -33,7 +33,11 @@ function Breadcrumbs() {
             <Fragment key={segment}>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
-                <BreadcrumbLink href={href}>{segment}</BreadcrumbLink>
+                {isLast ? (
+                  <BreadcrumbPage>{segment}</BreadcrumbPage>
+                ) : (
+                  <BreadcrumbLink href={href}>{segment}</BreadcrumbLink>
+                )}
               </BreadcrumbItem>
             </Fragment>
           );
